@@ -1,0 +1,24 @@
+# 問題1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ex1
+spec:
+  selector:
+    matchLabels:
+      app: ex1
+  template:
+    metadata:
+      labels:
+        app: exl
+    spec:
+      containers:
+      - name: ex1
+        image: alpine
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "100m"
+        command:
+          - sleep
+          - infinity
